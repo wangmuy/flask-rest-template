@@ -1,0 +1,23 @@
+backend_v1_env:
+  image: wangmuy/flask-nginx-gunicorn
+  volumes:
+    - .:/deploy
+  environment:
+    WORKDIR_ROOT: /deploy
+    RQMT_FILE: /deploy/flask_rest_template/requirements.deploy.txt
+    VENV_DIR: /deploy/env
+    VENV_INSTALL: 3.5
+
+backend_v1:
+  image: wangmuy/flask-nginx-gunicorn
+  ports:
+    - "8888:80"
+  volumes:
+    - .:/deploy
+    - ./gunicorn.conf:/etc/supervisor/conf.d/gunicorn.conf
+  environment:
+    USER_ID: ${USER_ID}
+    GROUP_ID: ${GROUP_ID}
+    WORKDIR_ROOT: /deploy
+    VENV_DIR: /deploy/env
+

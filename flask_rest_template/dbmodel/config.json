@@ -1,0 +1,5 @@
+{
+  "db_sqlite_absolute": "sqlite:////home/wangmuy/flask-rest-template/flask_rest_template/dbmodel/Chinook_Sqlite_AutoIncrementPKs.sqlite",
+  "db_sqlite_relative": "sqlite:///dbmodel/Chinook_Sqlite_AutoIncrementPKs.sqlite",
+  "db_mysql": "mysql+mysqlconnector://admin:123456@192.168.99.100:3306/Track?charset=utf8"
+}
